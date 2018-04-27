@@ -1,0 +1,81 @@
+\documentclass[a4paper]{article}
+\usepackage{tcolorbox}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{lmodern}
+\usepackage{tabularx}
+\usepackage{amssymb}
+\usepackage{makecell}
+\usepackage{centernot}
+\tcbuselibrary{skins}
+\newcommand{\cross}{\textcolor{red}{\textbf{X}}}
+\newcommand{\tick}{\textcolor{olivegreen}{\textbf{\checkmark}}}
+\newcommand{\notimplies}{\centernot\implies}
+
+\title{\vspace{-3em}
+\begin{tcolorbox}
+\Huge\sffamily Ingegneria del Software
+\end{tcolorbox}
+\vspace{-3em}
+}
+
+\date{}
+
+\usepackage{background}
+\SetBgScale{1}
+\SetBgAngle{0}
+\SetBgColor{black}
+\SetBgContents{\rule[0em]{4pt}{\textheight}}
+\SetBgHshift{-3cm}
+\SetBgVshift{0cm}
+\usepackage[margin=0.5cm]{geometry}
+
+
+%\url{http://tex.stackexchange.com/a/314/86}
+
+\makeatletter
+\def\cornell{\@ifnextchar[{\@with}{\@without}}
+\def\@with[#1]#2#3{
+\begin{tcolorbox}[enhanced,colback=gray,colframe=black,fonttitle=\large\bfseries\sffamily,sidebyside=true, nobeforeafter,before=\vfil,after=\vfil,colupper=blue,sidebyside align=top, lefthand width=.3\textwidth,
+opacityframe=0,opacityback=.3,opacitybacktitle=1, opacitytext=1,
+segmentation style={black!55,solid,opacity=0,line width=3pt},
+title=#1
+]
+\begin{tcolorbox}[colback=black!05,colframe=black!25,sidebyside align=top,
+width=\textwidth,nobeforeafter]#2\end{tcolorbox}%
+\tcblower
+\sffamily
+\begin{tcolorbox}[colback=black!05,colframe=black!10,width=\textwidth,nobeforeafter]
+#3
+\end{tcolorbox}
+\end{tcolorbox}
+}
+\def\@without#1#2{
+\begin{tcolorbox}[enhanced,colback=white!15,colframe=white,fonttitle=\bfseries,sidebyside=true, nobeforeafter,before=\vfil,after=\vfil,colupper=blue,sidebyside align=top, lefthand width=.3\textwidth,
+opacityframe=0,opacityback=0,opacitybacktitle=0, opacitytext=1,
+segmentation style={black!55,solid,opacity=0,line width=3pt}
+]
+
+\begin{tcolorbox}[colback=white!05,colframe=white!25,sidebyside align=top,
+width=\textwidth,nobeforeafter]#1\end{tcolorbox}%
+\tcblower
+\sffamily
+\begin{tcolorbox}[colback=white!05,colframe=black!5,width=\textwidth,nobeforeafter]
+#2
+\end{tcolorbox}
+\end{tcolorbox}
+}
+\makeatother
+
+\parindent=0pt
+
+%\newcommand{\cornell}[2]{%
+%}
+
+%\AddEverypageHook{
+%\hspace{.3\textwidth}\vrule width 3pt depth .4\textheight
+%\vspace{-\textheight}}
+
+
+

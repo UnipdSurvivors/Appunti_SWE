@@ -1,0 +1,14 @@
+digraph G{
+		graph[overlap=false];
+		node[style=solid; shape=box;];
+		A[label="Richieste/Necessità"];
+		B[label="Identificare le Attività"];
+		C[label=<Identificare le dipendenze<br /> tra le attivit&agrave;>];
+		D[label="Stima delle risorse per le attività"];
+		E[label="Allocare persone alle attività"];
+		F[label="Creare i diagrammi di progetto"];
+		G[label="Gantt, PERT, WBS"];
+		A->B->C->D->E->F->G;
+		F->D;
+
+}

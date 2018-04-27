@@ -1,0 +1,4 @@
+graph g{
+        node[shape=record];
+        A[label="{Controller|Services|Repositories|Databases}"];
+}

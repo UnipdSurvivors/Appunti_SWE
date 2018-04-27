@@ -1,0 +1,82 @@
+%Note di Ingegneria del Software
+%Sommario: Design pattern creazionali, singleton, Builder, AbstractFactory
+
+\cornell{Design Pattern Creazionali}{Danno indicazioni per risolvere problemi di istanziazione}
+
+\cornell{Singleton}{(Diventato un anti-pattern)\\
+Assicura \textbf{L'esistenza di un'unica istanza} della classe e dà un punto di accesso globale ad essa.\\
+Applicabilità \begin{itemize}
+\item Deve esistere una sola istanza di una classe in tutta l'applicazione e deve essere accessibile in modo noto
+\item L'istanza deve essere estendibile tramite ereditarietà
+\end{itemize}\\
+Non voglio fare uso di variabili globali perchè: \begin{itemize}
+\item Introducono dipendenze
+\item Divengono un "single point of failure"
+\end{itemize}\\
+I singleton sono classi prive di stato, che contengono solo metodi e nessun attributo dipendente dall'istanza. Se i singleton fossero classi con stato, si incorrerebbe in fenomeni di Aliasing.\\
+Si fa riferimento a "Singleto" (S maiuscola), per parlare del pattern, mentre si usa "singleton" (S minuscola) per parlare dell'insieme di caratteristiche del pattern.\\
+Noi faremo riferimento alla seconda denominazione, soprattutto all'interno dei diagrammi UML}
+
+\cornell{Singleton: Implementazione}{\begin{itemize}
+\item Rendo privato il costruttore, così che l'oggetto non possa essere istanziato da altri
+\item Mantengo un riferimento statico all'istanza all'interno della classe
+\item Creo un metodo statico nella classe \textbf{che crea l'istanza se il riferimento memorizzato è null}, e restituisce l'istanza statica memorizzata
+\end{itemize}
+Questa implementazione presenta dei problemi, oltre che dei vantaggi: \begin{itemize}
+\item In caso di concorrenza sul metodo statico, potrebbero venirsi a creare due singleton, di cui uno mai usato (dangling reference)
+\item Non è semplicemente serializzabile
+\item È un'implementazione Lazy, l'istanza del singleton viene creata solo quando necessario; risparmiando risorse.
+\end{itemize}\\
+Il problema della concorrenza può essere risolto inizializzando il riferimento statico immediatamente, andando però a perdere la laziness.\\
+Si possono avere ulteriori migliormanti facendo uso delle classi enumeratore.\\
+In questo modo sarà il linguaggio stesso (Java, nella lezione) che ci garantirà l'unicità dell'istanza}
+
+\cornell{Problemi del singleton}{ \begin{itemize}
+\item Alla fine di tutto, è solo una variabile globale vista in ottica Object-Oriented
+\item Crea problemi con lo unit testing. Nascondendo le dipendenze, io non riesco a fornire al singleton dei mock/stub per effettuare i test.
+\end{itemize}\\
+Per questi motivi all'oggi il singleton viene considerato un anti-pattern.\\
+%TODO: Aggiungere codice da GitHub}
+
+\cornell[Errori Comuni]{UML e Singleton}{Molte volte negli anni passati si sono raffigurati i singleton come classi con un riferimento a se stesse (tramite la freccia).\\
+Questa rappresentazione è \textbf{assolutamente sbagliata}}
+
+\cornell{Builder}{Separa la costruzione di un \textbf{oggetto complesso} dalla sua rappresentazione\\
+Permette di costruire oggetti complessi senza aver a che fare con costruttori grandi e situazioni di telescoping (tanti costruttori che richiamano un costruttore grande con diverse combinazioni di parametri opzionali o meno)}
+
+\cornell{Builder: Implementazione}{ \begin{itemize}
+\item Rendo il costruttore privato o package private
+\item Creo una classe "builder" con gli stessi attributi della classe da costruire ed un setter per ogni attributo ed un metodo per costruire l'oggetto finale.\\
+Ogni setter dovrà ritornare il riferimento \texttt{this} per permettere la concatenazione di setter.
+\end{itemize}\\
+%TODO: Esempio di codice da GitHub
+In questo modo (almeno in Java), si vengono a creare così delle cosiddette "interfacce fluide"}
+
+\cornell{Vantaggi Builder}{ \begin{itemize}
+\item Permette di controllare opzionalità ed obbligatorietà di parametri (tramite ad esempio objects.nonNull())
+\item Facilita le modifiche della rappresentazione interna di un prodotto, basta costruire un nuovo builder.
+\item Aumenta l'incapsulazione
+\item Miglior controllo del processo di costruzione
+\begin{itemize}
+        \item Tramite la costruzione step-by-step
+        \item Accentrando la logica di validazione
+\end{itemize}
+\end{itemize}\\
+L'accentramento della logica di validazione dentro al builder (ed al di fuori della classe costruita) va bene dato che Builder e classe costruita sono fortemente legate}
+
+\cornell{Abstract Factory}{Fornisce un'interfaccia per costruire famiglie di prodotti non collegate tra loro ma le cui componenti di una famiglia vanno usate assieme; il tutto senza andare a creare classi concrete\\
+\begin{itemize}
+        \item Demanda la costruzione degli oggetti ad una classe terza
+\item In questo modo evito errori del tipo "Creo un bottone per mac su una finestra per windows".\\
+La factory creerà gli oggetti corretti per me.
+\item Ho un unico punto di decisione nel codice, rendendolo configurabile.
+\item Devo nascondere i costruttori all'esterno, permettendo la costruzione degli oggetti solo tramite le factory\\
+Le factory possono essere delle buone classi singleton.
+\end{itemize}}
+
+\cornell{Vantaggi/Svantaggi Factory}{ \begin{itemize}
+\item Promuove la consistenza fra prodotti
+\item Aumenta la semplicità nell'uso di una famiglia di prodotti
+\item Attua l'isolamento dei tipi concreti (in quanto i client vanno solo ad usare interfacce)
+\item Diventa però complesso aggiungere nuovi prodotti alle famiglie
+\end{itemize}}

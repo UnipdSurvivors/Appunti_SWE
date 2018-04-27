@@ -1,0 +1,54 @@
+%Note di Ingegneria del Software
+%Sommario: Processi Software, modelli di ciclo di vita, glossari vari
+
+\cornell{Ciclo di Vita}{Stati che il prodotto assume dal concepimento al ritiro.\\
+Il ciclo di vita del software è equiparabile ad una macchina a stati finiti.}
+
+\cornell{Processi di Ciclo di vita}{Way of working per abilitare le transizioni (corrette) tra stati del ciclo di vita (\textbf{come} fare la transizione)}
+
+\cornell{Modelli di ciclo di vita}{Astrazione che rappresenta i possibili cicli di vita.\\
+Un professionista deve sapere \textbf{prima} la successione di attività del ciclo di vita in modo da stimare oneri e tempi associati al progetto software.\\
+Comprendono tutto il ciclo di vita (comprese le fasi d'uso e manutenzione), noi ci occuperemo solo del "ciclo di sviluppo".\\
+Alcuni esempi di modelli: \begin{itemize}
+\item Sequenziale
+\item Incrementale
+\item A spirale
+\item Agile
+\end{itemize}}
+\cornell{Prototipo}{"Versione Iniziale", o nel nostro caso una versione che: \begin{itemize}
+\item Serve per \textbf{capire meglio}
+\item Può essere "usa e getta" (capisco e poi scarto)
+\item Può essere un pezzo del software che resta in via permanente
+\item Possono rappresentare stati di avanzamento (vedi "incremento") certi nello sviluppo del software (baseline)
+\end{itemize}}
+\cornell{Incremento}{Procedere per aggiunte su una base}
+\cornell{Iterazione}{Procedere per rivisitazioni (può includere un incremento o addirittura un decremento).\\
+L'iterazione è un processo di durata non determinabile (anche infinita)}
+\cornell{Riuso}{In un progetto software moderno è importante fare riuso di algoritmi, tecniche, librerie e codice già esistente. Può essere:\begin{description}
+\item [Opportunistico] copia/incolla senza comprensione; non necessariamente ripetibile
+\item [Sistematico] ricerca, comprensione e riuso del codice. Ripetibile.
+\end{description}}
+\cornell{Manutenzione}{Un buon software deve essere mantenuto, non necessariamente per riparare problemi ma anche a scopo evolutivo.\\
+Le cose che funzionano oggi potrebbero non funzionare domani, quindi è necessario mantenere la storia dell'evoluzione/manutenzione/sviluppo del software, che viene fatto tramite il controllo di versione (versioning)}
+\cornell{Componenti}{Un software non è monolitico, ma diviso in parti che sono messe insieme secondo una logica descritta nella \textbf{configurazione}\\
+La configurazione è stabilita tramite strumenti di controllo di configurazione.\\
+L'azione che automatizza la procedura descritta nella configurazione è detta \underline{build}}
+\cornell{Processo}{Insieme di attività \textbf{correlate} e \textbf{coese} che trasformano ingressi (bisogni) in uscite (prodotti) secondo regole date, consumando risorse nel farlo.\\
+Non è la stessa definizione di progetto, infatti è un pezzo del progetto.\\
+Le regole date sono atte a garantire efficienza ed efficacia.\\
+Efficenza ed efficacia vanno misurate in corso d'opera ottenendo \textbf{dati} misurabili dell'attività e conseguentemente si impongono vincoli per mantenere efficienza ed efficacia.}
+\cornell{Misurazioni}{Le misurazioni devono essere: \begin{itemize}
+\item Tempestive
+\item Accurate
+\item Non intrusive (non devono infastidire la gente)
+\end{itemize}}
+\cornell{Coesione}{Si dice coeso un insieme di parti che concorrono ad un unico obiettivo (esempio le classi dei programmi)}
+\cornell{Correlazione}{Si dicono correlati degli oggetti che hanno un motivo per stare assieme.\\
+Fa da premessa alla modularità.}
+\cornell{Metriche}{Metodi di misurazione.\\
+Metrica di efficienza: Produttività; definita come \[\frac{q.tà\ di\ prodotto\ realizzato}{risorse}\]
+Metrica di efficacia (o di conformità): Il grado di raggiungimento degli obiettivi
+\begin{itemize}
+\item Interni (del fornitore)
+\item Esterni (gradimento dell'utenza)
+\end{itemize}}

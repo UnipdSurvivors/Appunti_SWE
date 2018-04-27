@@ -1,0 +1,53 @@
+%Note di Ingegneria del Software
+%Sommario: Misurazione Quantitativa, Metriche Software, Valutazione, Qualità di Processo, ISO 900x, Gestione Qualità come funzione aziendale, Strumenti di Valutazione
+
+\cornell{ISO/IEC 14598}{Fornisce il modello di valutazione, tramite \textbf{misurazione quantitativa}}
+
+\cornell{Misurazione Quantitativa}{Il processo tramite cui, secondo regole definite (e metriche), simboli o numeri sono assegnati ad attributi di una entità (N. Fenton)}
+
+\cornell{ISO/IEC 25000:2005}{Ingloba gli standard ISO 9126 e ISO 14598, chiamato anche\\
+\textbf{SQuaRE} - Software Product Quality Requirements and Evaluation}
+
+\cornell{Metriche Software}{Qualunque tipo di misura che si relaziona ad un sistema Software: \begin{description}
+\item [Programmi]: SLOC (Source Line of Code), cioè uno statement
+\item [Impegno]: Giorni/Persona, Ore/Persona
+\item [Testo]: Gunning's Fog Index\\
+Fog = ((media di parole per frase)+(numero di parole con più di 3 sillabe)) $\cdot$ 0.4
+\end{description}\\
+Le metriche aiutano a misurare attributi, oltre ad aiutare a fare previsioni ed identificare anomalie.}
+\cornell{Esempi di metriche}{ \begin{itemize}
+\item Numero di Parametri di procedura (Meno è meglio)
+\item Complessità Ciclomatica (Meno è meglio)
+\item Dimensione del programma, in numero di linee di codice (Solitamente Meno è meglio, a seconda del linguaggio di programmazione)
+\item Numero di messaggi d'errore (Nei Log) (Solitamente di più è meglio, aiutando la manutenibilità ed aumentando il grado di diagnostica interna)
+\item Lunghezza del Manuale Utente (Solitamente più lungo e preciso è meglio)
+\end{itemize} }
+
+\cornell{Valutazione}{Prodotto $\longrightarrow$ Misurazione (scelta delle metriche) $\longrightarrow$ Valutazione (Interpretazione delle misure) $\longrightarrow$ Accettazione (tramite confronto con i criteri di accettazione) $\longrightarrow$ Giudizio}
+
+\cornell{Qualità Di Processo}{Concentrarsi sulla qualità di prodotto non basta, e non dà risultati ripetibili, conviene concentrarsi sulla qualità del way of working.\\
+\begin{itemize}
+\item Organizzazione e diffusione interna \textbf{sistematica}
+\item Identificazione dei momenti di verifica in itinere
+\item Riproducibilità dei risultati
+\item Quality Assurance, anche \textbf{proattiva}
+\end{itemize}\\
+Bisogna inoltre avere \textbf{disposizione al miglioramento} (essere fieri del proprio way of working, ma sapere che è sempre migliorabile.)}
+
+\cornell{ISO 900x}{Certificazione ISO 9001 (Seconda metà anni '90)\\
+Valutazione dei fornitori di prodotti o servizi.\\
+\textbf{ISO 9000:2005} - Fondamenti e glossario.\\
+\textbf{ISO 9001:2000} - Sistema Qualità - Requisiti (Praticamente ISO 9000 calato ai sistemi produttivi)\\
+\textbf{ISO 9000-3:1997} - Quality Management and Quality Assurance Standards\\
+\textbf{ISO 90003:2004} - Praticamente ISO 9001 applicato ai Software\\
+\textbf{ISO 9004:2000} - Guida al miglioramento dei risultati}
+
+\cornell{Gestione Qualità Come Funzione Aziendale}{Funziona trasversalmente a settori e repari e riferisce direttamente alla direzione}
+
+\cornell{Manuale della Qualità}{Documento che definisce il sistema di gestione della qualità di un'organizzazione}
+
+\cornell{Strumenti di Valutazione}{ \begin{description}
+\item [SPY] Software Process Assessment And Improvement
+\item [CMM-CMMI] Capability Maturity Model Integration
+\item [SPICE] Software Process Improvement Capability Determination - Evolutosi poi nello standard ISO/IEC 15504
+\end{description}}

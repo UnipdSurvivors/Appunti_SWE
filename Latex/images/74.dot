@@ -1,0 +1,38 @@
+graph G{
+        node[shape="box"];
+        1[label="Produttività"];
+        2[label="Valore"];
+        3[label="Costo"];
+        4[label="Di Personale"];
+        5[label="Di risorse"];
+        6[label="Per complessità"];
+        7[label="Qualità"];
+        8[label="Quantità"];
+        9[label="Tempo"];
+        10[label="Denaro"];
+        11[label="Hardware"];
+        12[label="Software"];
+        13[label="Limitazioni di Dominio"];
+        14[label="Difficoltà del problema"];
+        15[label="Affidabilità"];
+        16[label="Difetti"];
+        17[label="Dimensione"];
+        18[label="Funzionalità"];
+        1--2;
+        1--3;
+        2--7;
+        2--8;
+        7--15;
+        7--16;
+        8--17;
+        8--18;
+        3--4;
+        4--9;
+        4--10;
+        3--5;
+        5--11;
+        5--12;
+        3--6;
+        6--13;
+        6--14;
+}

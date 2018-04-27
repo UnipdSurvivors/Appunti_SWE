@@ -1,0 +1,76 @@
+%Note di Ingegneria del Software
+%Sommario: Tracciamento, documentazione, verifica, gestione dei requisiti, Stati di Progresso per SEMAT, Progettazione
+
+\cornell{Tracciamento dei Requisiti}{Durante il tracciamento dei requisiti è importante che siano soddisfatte le condizioni di \begin{description}
+\item [Sufficienza] Tutti i bisogni sono stati rilevati e trasformati in requisiti
+\item [Necessità] Tutti i requisiti soddisfano un dato bisogno (Cioè ogni requisito ha una giustificazione della propria esistenza)
+\end{description}}
+
+\cornell{Documentazione dei requisiti}{È fatta in un linguaggio misto. È importante \begin{itemize}
+\item Evitare le ambiguità interpretative (Usando norme che garantiscano una terminologia consistente)
+\item Usare linguaggi a diagrammi e formule (invece di testo e disegni "in stile libero")
+\end{itemize}}
+
+\cornell{Specifica Dei Requisiti: IEEE 830-1998}{La specifica dei requisiti deve avere delle caratteristiche desiderabili: \begin{itemize}
+\item Non ambigua
+\item Corretta
+\item Completa
+\item Verificabile
+\item Consistente
+\item Modificabile
+\item Tracciabile
+\item Ordinata (Per rilevanza)
+\end{itemize}}
+
+\cornell{Verifica Dei Requisiti}{Eseguita su un documento organizzato, viene effettuata tramite: \begin{description}
+\item [Walkthrough] Traversata a pettine, lettura a largo spettro \\ Non so dov'è il problema, quindi vado a battere tuttle le strade per trovarlo
+\item [Ispezione] Basata su una checklist mirata e solida (Si fa un'ispezione in stile "Gate Aeroportuale")
+\end{description}}
+
+\cornell{Gestione dei requisiti}{È necessario che i requisiti siano contraddistinti da un \textbf{codice univoco ed informativo}\\
+Solitamente sono ordinati in modo sequenziale sulla struttura del documento.\\
+I requisiti devono essere ordinati in modo che inserimento, rimozione e gestione abbiano il minor impatto possibile.\\
+Inoltre è vitare saper spezzare i requisiti monolitici e generali in requisiti più piccoli che siano immediatamente localizzabili, risolubili e verificabili.}
+\cornell{Stati di Progresso Secondo SEMAT}{ \begin{description}
+\item [Conceived] Il comittente è stato identificato e gli stakeholder vedono sufficienti opportunità per il progetto
+\item [Bounded] I macro bisogni sono chiari ed i meccanismi di gestione dei requisiti sono stati fissati
+\item [Coherent] I requisiti sono stati classificati ed i requisiti essenziali sono ben definiti
+\item [Acceptable] I requisiti fissati definiscono un sistema soddisfacente per gli stakeholder
+\item [Addressed] Il prodotto soddisfa i principali requisiti, al punto di meritare rilascio ed uso
+\item [Fulfilled] Il prodotto soddisfa abbastanza requisiti da meritare la piena approvazione degli stakeholder
+\end{description}}
+
+\cornell{Progettazione}{È una fase che precede la produzione e persegue la \textbf{correttezza per costruzione} piuttosto che la correttezza per correzione (conosciuta anche come "Trial And Error")\\
+Progettando imparo a: \begin{itemize}
+\item Dominare la complessità del prodotto (Tramite divide-et-impera)
+\item Organizzare e ripartire le responsabilità di realizzazione
+\item Produrre in economia (Efficienza)
+\item Garantire la Qualità (Efficacia)
+\end{itemize}}
+\cornell{Dall'analisi alla progettazione}{Enunciazione del Problema $ \Longrightarrow $ Requisiti del problema $ \Longrightarrow$ Soluzione del problema.\\
+L'analisi comprende le prime due fasi di questo schema, mentre la progettazione e codifica comprende quella centrale e l'ultima.\\
+Durante l'analisi faccio uso di un \emph{approddio investigativo}, ricavando molti requisiti e molte soluzioni possibili.\\
+Tra le varie soluzioni possibili, tramite un \emph{approccio sintetico} scelgo quella con massima economicità}
+
+\cornell{Obiettivi Della Progettazione}{Gli obiettivi della progettazione sono: \begin{itemize}
+\item Soddisfare i requisiti tramite un sistema di qualità
+\item Definendo l'\textbf{architettura} (Strumento che permette di raggiungere un risultato) logica del prodotto
+\end{itemize}}
+
+\cornell{Architettura (Una definizione)}{ \begin{itemize}
+\item Dividere il sistema in componenti
+\item Organizzazione di tali componenti (definizione di ruole, responsabilità, interazioni)
+\item Interfacce necessarie all'interazione tra componenti e tra componenti ed ambiente
+\item Paradigmi di composizione
+\end{itemize}\\
+Inoltre esistono diversi stili di architettura, tra cui dovremo scegliere quello che si adatta meglio al nostro problema}
+
+\cornell{Qualità d una buona architettura}{ \begin{description}
+\item [Sufficienza] Soddisfa tutti i requisiti
+\item [Comprensibilità] Comprensibile da parte degli stakeholder
+\item [Robustezza] Capace di sopportare ingressi diversi (anche imprevisti o sbagliati)
+\item [Modularità] Suddivisa in parti chiare e distinte:\\
+È necessario dividere il tutto in parti che siano \textbf{utili}.\\
+Inoltre perseguo l'information hiding, in modo da ridurre le perturbazioni esterne causate da cambiamenti interni.
+\end{description}}
+

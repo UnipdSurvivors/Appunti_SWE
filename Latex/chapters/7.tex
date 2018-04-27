@@ -1,0 +1,44 @@
+%Note di Ingegneria del Software
+%Sommario: Versionamento, Pianificazione
+
+\cornell{Cos'è}{Il Controllo Versione (o versioning) è un insieme di tecniche e strumenti atti alla gestione dei cambiamenti nei files.\\
+La necessità di poter gestire questi cambiamenti si è fatta sentire molto più nell'era dell'informatica, dove è abbastanza semplice introdurre modifiche ad un software che debbano poi essere rimosse, solitamente a seguito di malfunzionamenti provocati da tali modifiche.}
+
+\cornell{Come Funziona il Versioning: Teoria}{Sfruttando la teoria dei grafi possiamo vedere l'insieme di revisioni di un software come un grafo direzionato ed aciclico, in cui possiamo vedere le seguenti componenti: \begin{description}
+\item [Trunk] "Il tronco" Che rappresenta la linea di sviluppo principale, solitamente includendo nuove caratteristiche
+\item [Branches] "I rami" che si diramano dal trunk in diversi momenti della sua vita
+\end{description}}
+
+\cornell{Branches}{I rami solitamente sono usati per \begin{itemize}
+\item Lavorare su una nuova feature senza intaccare la base su cui si basa il branch
+\item Lavorare parallelamente al trunk, un classico esempio è il branch di manutenzione di una certa versione del software
+\item Lavorare parallelamente ad altri branch, rendendo più rapido lo sviluppo del software
+\end{itemize}}
+
+\cornell{Merging}{Quando un lavoro su un branch si considera concluso, vi sono due possibilità: \begin{itemize}
+\item Abbandono del branch (in tal caso si parla di "discontinued branch")
+\item Merge nel trunk
+\end{itemize}
+In caso di merge, il contenuto del branch viene unito a quello del trunk, con eventuale gestione di conflitti.}
+
+\cornell{Commits}{Essendo uno strumento anche collaborativo, i software di version control devono garantire l'atomicità delle operazioni, che in termini tecnici vengono dette "commit", in modo da evitare interferenze sui file che potrebbero rovinare il lavoro.}
+
+\cornell{Software di Controllo Versione}{Esistono vari software per fare controllo versione, i più famosi sono git, subversion (svn) e mercurial (hg).}
+
+\cornell{Git}{Nato nel 2005 ad opera di Linus Torvalds, git è un software di controllo versione nato dopo che molti sviluppatori del kernel linux hanno dovuto abbandonare l'accesso al codice sorgente tramite BitKeeper, dato che a detta del proprietario era stato fatto un reverse engineering dei protocolli Bitkeeper (cosa non ammessa)\\
+Git è un sistema di versionamento con forte supporto allo sviluppo non lineare, permettendo branching e merging rapidi.\\
+Inoltre è dedicato fortemente allo sviluppo distribuito e permette di pubblicare i repository via HTTP, FTP, ssh o rsync in maniera semplice.\\
+Git è inoltre estremamente scalabile, è dotato di autenticazione crittografica della cronologia (così che se le vecchie versioni sono cambiate, questo possa essere notato), permette la concatenazione delle proprie componenti ed è dotao di strategie di fusione intercambiabili.}
+
+\cornell{Subversion}{SVN è un altro sistema di controllo versione, creato da CollabNet inc. come successore di CVS (Concurrent Versions System).\\
+In questo programma le commit sono vere transazioni atomiche, infatti interrompere una commit lascia il repository in uno stato di incoerenza.\\
+Alcune operazioni (come il branching) non dipendono dalla dimensione dei dati\\
+È basato su un protocollo client/server che invia solo le differenze in entrambe le direzioni, rendendo i costi di comunicazione proporzionali alla dimensione di tali modifiche.}
+
+\cornell{Conclusione Sul Versionamento}{È assolutamente necessario porsi delle regole su chi deve intervenire su quale componente del progetto/documentazione, in modo da evitare perdite di tempo nella gestione dei conflitti.\\
+La storia di un progetto è vitale, e deve essere conservata in maniera quanto più immutabile, se si devono operare modifiche in parti storiche del progetto, dovrebbe essere sempre possibile rintracciare la versione precedente a tale modifica.}
+
+\cornell{Bug, Ticket Trackers e pianificazione}{Un altro utile strumento di supporto per la coordinazione nei progetti è il tracker. Il cui scopo è quello, appunto di "tener traccia" di qualcosa.\\
+Solitamente nell'ambito dello sviluppo software si usano bug trackers, per tener conto dei dettagli di bachi rilevati in un software ed i vari procedimenti, commenti e soluzioni proposte riguardo a tali bachi.\\
+Un altro esempio, di carattere più generico sono i ticket trackers, dove si tiene conto non solo di bachi software ma anche di altre attività legate al progetto.\\
+È comunque vitale avere una persona con l'esperienza necessaria, e la volontà di prendersi responsabilità delle decisioni prese sul progetto. Questo ruolo è solitamente coperto dal project manager.}

@@ -1,0 +1,70 @@
+%Note di Ingegneria del Software
+%Sommario: Prodotti Documentali, pensieri top-down e bottom-up, studio di fattibilità, analisi e classificazione dei requisiti
+
+\cornell{Prodotti Documentali}{Non posso "raccontare a voce" informazioni collaborative perchè: \begin{itemize}
+\item "Verba Volant" - Non può rimanere traccia scritta di ciò che ho detto
+\item La discussione orale in stile meeting blocca le persone dal compiere le proprie attività
+\end{itemize}\\
+Quindi devo avere a disposizione dei formati non invasivi, cioè dei documenti scritti.}
+\cornell{Primi prodotti documentali}{\begin{description}
+\item [Capitolato D'appalto] Definisce i requisiti del cliente (Il "Cosa fare")
+\item [Specifica dei requisiti Software] Il "Come fare" ciò che è definito dal capitolato\\
+Comprende: \begin{description}
+\item [Studio di fattibilità] Che è un documento riservato al fornitore
+\item [Analisi dei requisiti] cioè definisco col cliente ciò che devo fare, con questo documento il fornitore viene formalmente ingaggiato per il lavoro
+\end{description}
+\item [Ripartizione dei requisiti]
+\end{description}}
+
+\cornell{Approccio Funzionale}{È un approccio di tipo top-down.\\
+Parte dal sistema completo (il tutto) e lo suddivide in componenti (secondo il principio "divide et impera")\\
+È l'approccio più immediato per gli esseri umani.\\
+Non aiuta il riuso, quindi è un pensiero da evitare.}
+\cornell{Approccio Object-Oriented}{Approccio di tipo bottom-up.\\
+Parto da pezzi generici che opportunamente manipolati possono diventare il sistema.}
+
+\cornell{Studio di Fattibilità}{Valutazione dei costi, rischi e benefici. \begin{itemize}
+\item Fattibilità tecnico-organizzativa
+\item Rapporto costi/benefici
+\item Individuazione dei rischi
+\item Valutazione delle scadenze temporali
+\item Valutazione delle alternative: \begin{itemize}
+\item Make Or Buy (Affidarsi al riuso oppure sviluppare ex-novo)
+\item Scelte di Architettura
+\item Strategie Operative
+\end{itemize}
+\end{itemize}\\
+Questo passaggio ha tempistiche molto strette (Solitamente si ha un mese per Studio di Fattibilità \textbf{e} Analisi dei requisiti)}
+\cornell{Tecniche di Analisi: Analisi dei bisogni e delle fonti}{Ci si dedica alla comprensione del dominio\\
+Mi metto nei panni dell'utente che ha scritto il capitolato, cercando di esplicitare ciò che è implicito nel dominio. (Possono infatti essere presenti requisiti impliciti)}
+\cornell{Tecniche di Analisi: Interazione col Cliente}{Interviste: quando capiamo cose col cliente, queste vanno trascritte nella cosiddetta "minuta col cliente", un documento scritto.\\
+La minuta fa da appendice al capitolato ed ha valore contrattuale, quindi va approvato dalle parti.}
+\cornell{Tecniche di Analisi: Discussioni Creative e collaborative}{Brainstorming.\\
+In ogni brainstorming ci devono essere $n+2$ persone, di cui $n$ discutono, più \begin{itemize}
+\item Qualcuno che funga da "scriba", raccogliendo i punti della discussione su cui il gruppo converge
+\item Qualcuno che regolamenti la discussione in modo che \begin{itemize}
+\item Non ci si parli l'uno sopra l'altro
+\item Non si abbia quella persona che "parla sempre"
+\item Non si finisca per divagare
+\end{itemize}
+\end{itemize}}
+\cornell{Tecniche di Analisi: Prototipazione}{ \begin{itemize}
+\item Interna (Solo per il fornitore)
+\item Esterna (Per discussione col cliente)
+\end{itemize} }
+\cornell{Classificazione Dei Requisiti}{Ordinare i requisiti facilita la comprensione, manutenzione e tracciamento.\\
+\begin{itemize}
+\item Attributi di prodotto\\
+"Cosa devo fare?"\\
+Riguardano strettamente il sistema/prodotto
+\item Attributi di Processo\\
+"Come devo farlo?"\\
+Riguarda il "way of working" (che viene solitamente imposto dal committente)
+\end{itemize}\\
+Altra possibile classificazione (per utilità strategica)
+\begin{description}
+\item [Obbligatori] Irrinunciabili, per qualche stakeholder
+\item [Desiderabili] hanno valore aggiunto riconoscibile, ma non sono strettamente necesari
+\item [Opzionali] relativamente utili, oppure contrattabili più avanti
+\end{description}\\
+Questi requisiti non devono essere in conflitto tra loro e devono essere \textbf{tracciabili} (avere requisiti atomici li rende facilmente verificabili, e quindi tracciabili)}

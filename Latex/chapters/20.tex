@@ -1,0 +1,74 @@
+%Note di Ingegneria del Software
+%Sommario: Adapter, Decorator, Facade, Proxy
+
+\cornell{Class Adapter}{Non funziona quando bisogna adattare una classe e le sue sottoclassi (dato che fa uso di ereditarietà), ma permette all'adapter di modificare alcune caratteristiche dell'adaptee}
+
+\cornell{Object Adapter}{Permette all'adapter di adattare più tipi\\
+Non permette la modifica di caratteristiche\\
+Un oggetto adapter non è sottotipo di adaptee\\
+Sono anche detti \textbf{Wrapper}}
+
+\cornell{Implementazione}{È importante individuare l'insieme minimo di funzioni da adattare \begin{itemize}
+\item Rende l'implementazione più semplice
+\item Rende la manutenzione più semplice
+\item Fare uso di operazioni astratte
+\end{itemize}}
+
+\cornell{Decorator}{Aggiunge responsabilità ad un oggetto \textbf{dinamicamente}\\
+Usato quando ci sono molte funzionalità che possono essere mischiate ed aggiunte ad un tipo base. Usato quindi: \begin{itemize}
+\item Il subclassing non può essere sempre usato (ad esempio vengono a crearsi un numero esponenziale di subclassi)
+\item Si vogliono aggiungere funzionalità \textbf{dopo} (o prima) dell'esecuzione della funzionalità base
+\end{itemize}\\
+Altre note: \begin{itemize}
+\item Consente più flessibilità rispetto alla derivazione statica
+\item Evito di creare "agglomerati di funzionalità", consentendo di creare classi più semplici
+\item Attenzione! Il decorator è diverso dalle componenti:\\
+I decorator non vanno usati nel caso in cui la funzionalità si basi su test di identità tra oggetti
+\item Negativo: Possibilità di proliferazione di classi piccole e simili: \begin{itemize}
+\item Che rendono lo unit testing difficile
+\item Sono difficili da comprendere fuori dal contesto del decorator
+\item Ma sono facili da personalizzare
+\end{itemize}
+\end{itemize}}
+
+\cornell{Facade}{È un design pattern semplice, ma tende ad essere abusato.\\
+Ha lo scopo di fornire un'interfaccia unica semplice per un sottosistema complesso.\\
+Quindi si applica quando si ha bisogno di un'unica interfaccia semplice.\\
+Consente: \begin{itemize}
+\item Disaccoppiamento sottosistema/client
+\item Stratificazione di un sistema
+\end{itemize}\\
+Conseguenze: \begin{itemize}
+\item Meno accoppiamento tra client e sistema \begin{itemize}
+\item Permette di eliminare dipendenze circolari
+\item Tempi di compilazione e building ridotti (evita la ricompilazione di tutte le componenti quando si va a modificare una componente dietro il facade)
+\item Non nasconde completamente le componenti di un sottosistema
+\end{itemize}
+\item Single Point of failure - Se modifico il facade, vado a "rompere" le dipendenze esterne, rendendole non funzionanti
+\item Sovradimensionamento delle facade
+\end{itemize}\\
+Altro: \begin{itemize}
+\item Implementabile come classe astratta
+\item Permette la gestione di classi provenienti da più sottosistemi
+\item Definizione di interfacce "pubbliche" e "private", dove un facade nasconde un'interfaccia "privata"
+\item Singleton Pattern: Si ha una sola istanza del facade
+\end{itemize}}
+
+\cornell{Proxy}{Fornisce un surrogato di un oggetto di cui si vuole controllare l'accesso.\\
+Solitamente usato per rinviare il costo di creazione di un oggetto al tempo d'uso effettivo.\\
+Ha la stessa interfaccia dell'oggetto che va ad inglobare.\\
+Le funzionalità dell'oggetto "inglobato" sono accedute attraverso il proxy}
+
+\cornell{Tipi di Proxy}{ \begin{description}
+\item [Remote Proxy] rappresentazione locale di un oggetto in un diverso spazio di indirizzi (esempio: Stub della Java RMI)
+\item [Virtual Proxy] creazione di oggetti complessi on-demand
+\item [Protection Proxy] controllo degli accessi all'oggetto originale
+\item [Smart Pointer] Gestione della memoria
+\end{description}\\
+Conseguenze: \begin{itemize}
+\item Introduce un livello di indirezione che può essere "farcito"
+\item Il remote Proxy nasconde dove l'oggetto reale risiede
+\item Il virtual proxy fa delle ottimizzazioni
+\item Il protection proxy definisce ruoli di accesso alle informazioni
+\item Possibilità di implementare sistemi copy-on-write
+\end{itemize}}
